@@ -1,8 +1,6 @@
-# [speedbump](https://github.com/etcinit/speedbump) [![GoDoc](https://godoc.org/github.com/etcinit/speedbump?status.svg)](http://godoc.org/github.com/etcinit/speedbump)
+# [speedbump](https://github.com/dmcclure/speedbump) [![GoDoc](https://godoc.org/github.com/dmcclure/speedbump?status.svg)](http://godoc.org/github.com/dmcclure/speedbump)
 
 A Redis-backed Rate Limiter for Go
-
-[![wercker status](https://app.wercker.com/status/9832225d9e89d9702d4ce7ca4e8e4285/m/master "wercker status")](https://app.wercker.com/project/bykey/9832225d9e89d9702d4ce7ca4e8e4285)
 
 ## Cool stuff
 
@@ -10,27 +8,13 @@ A Redis-backed Rate Limiter for Go
 - Extensible timing functions. Includes defaults for tracking requests per
 second, minute, and hour
 - Works with IPv4, IPv6, or any other unique identifier
-- Example middleware included for [Gin](https://github.com/gin-gonic/gin) (See: [ginbump](https://github.com/etcinit/speedbump/blob/master/ginbump)) and
+- Example middleware included for [Gin](https://github.com/gin-gonic/gin) (See: [ginbump](https://github.com/dmcclure/speedbump/blob/master/ginbump)) and
 [Negroni](https://github.com/codegangsta/negroni) (See:
-[negronibump](https://github.com/etcinit/speedbump/blob/master/negronibump))
-
-## Versions
-
-|Branch|Go Get Command|Client Version|-|
-|---|---|---|---|
-|**v2**|`go get gopkg.in/etcinit/speedbump.v2`|`gopkg.in/redis.v5`|[Link](https://gopkg.in/etcinit/speedbump.v2)|
-|**v1**, **master**|`go get gopkg.in/etcinit/speedbump.v1`|`gopkg.in/redis.v3`|[Link](https://gopkg.in/etcinit/speedbump.v1)|
-|**v0**|`go get gopkg.in/etcinit/speedbump.v0`|`gopkg.in/redis.v2`|[Link](https://gopkg.in/etcinit/speedbump.v0)|
+[negronibump](https://github.com/dmcclure/speedbump/blob/master/negronibump))
 
 ## Usage
 
 - Get a working Redis server
-- Go get:
-
-```sh
-$ go get github.com/etcinit/speedbump
-```
-
 - Include it in your code
 
 ```go
@@ -40,8 +24,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/etcinit/speedbump"
-	"gopkg.in/redis.v5"
+	"github.com/dmcclure/speedbump"
+	"github.com/go-redis/redis"
 )
 
 func main() {
